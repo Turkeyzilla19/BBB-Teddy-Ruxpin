@@ -1,2 +1,2 @@
 # BBB-Teddy-Ruxpin
-Using the Beagle Bone Black I show how to controll a Teddy Ruxpin.
+Using the Beagle Bone Black you can controll a Teddy Ruxpin.
