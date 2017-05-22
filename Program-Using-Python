@@ -1,9 +1,5 @@
 import Adafruit_BBIO.GPIO as GPIO
 from time import sleep 
-import sys
-import termios
-import tty
-import os
 
 enM = "P8_7"
 enE = "P8_9"
