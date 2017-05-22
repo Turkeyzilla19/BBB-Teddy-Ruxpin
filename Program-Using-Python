@@ -36,7 +36,7 @@ while 1:
     sleep(1.25)
     GPIO.output(ain4Pin, GPIO.LOW) 
   elif key == "d":
-    GPIO.output(ain4Pin, GPIO.LOW
+    GPIO.output(ain4Pin, GPIO.LOW)
     GPIO.output(ain3Pin, GPIO.HIGH)
     sleep(1.25)
     GPIO.output(ain3Pin, GPIO.LOW) 
