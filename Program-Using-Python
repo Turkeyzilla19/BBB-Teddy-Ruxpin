@@ -22,32 +22,25 @@ GPIO.setup(ain4Pin, GPIO.OUT)
 GPIO.output(enM, GPIO.HIGH)
 GPIO.output(enE, GPIO.HIGH)
 
-def getKey():
-  fd = sys.stdin.fileno()
-  old = termios.tcgetattr(fd)
-  new = termios.tcgetattr(fd)
-  new[3] = new[3] & ~termios.ICANON & ~termios.ECHO
-  new[6][termios.VMIN] = 1
-  new[6][termios.VTIME] = 0
-  termios.tcsetattr(fd, termios.TCSANOW, new)
-  key = NONE
-  try:
-    key = os.read(fd, 3)
-  finally:
-    termios.tcsetattr(fd, termios.TCSAFLUSH, old)
-   return key
-
 while 1: 
-  x = str(getKey())
-  if x == "w":
+  key = input("Press a key to change Teddy's facial features. ")
+  if key == "w":
     GPIO.output(ain2Pin, GPIO.LOW)
     GPIO.output(ain1Pin, GPIO.HIGH)
-  elif x == "s":
+    sleep(1.25)
+    GPIO.output(ain1Pin, GPIO.LOW)
+  elif key == "s":
     GPIO.output(ain1Pin, GPIO.LOW)
     GPIO.output(ain2Pin, GPIO.HIGH)
-  elif x == "a":
+    sleep(1.25)
+    GPIO.output(ain2Pin, GPIO.LOW)
+  elif key == "a":
     GPIO.output(ain3Pin, GPIO.LOW)
     GPIO.output(ain4Pin, GPIO.HIGH)
-  elif x == "d":
-    GPIO.output(ain4Pin, GPIO.LOW)
+    sleep(1.25)
+    GPIO.output(ain4Pin, GPIO.LOW) 
+  elif key == "d":
+    GPIO.output(ain4Pin, GPIO.LOW
     GPIO.output(ain3Pin, GPIO.HIGH)
+    sleep(1.25)
+    GPIO.output(ain3Pin, GPIO.LOW) 
