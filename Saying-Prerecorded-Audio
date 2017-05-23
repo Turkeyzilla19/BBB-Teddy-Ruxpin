@@ -18,3 +18,7 @@ GPIO.setup(ain4Pin, GPIO.OUT)
 GPIO.output(enM, GPIO.HIGH)
 GPIO.output(enE, GPIO.HIGH)
 
+start = input("Start? ")
+if start == "y":
+      
+
