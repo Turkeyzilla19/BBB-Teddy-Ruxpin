@@ -8,6 +8,13 @@ ain2Pin = "P8_10"
 ain3Pin = "P8_12"
 ain4Pin = "P8_14"
 
+GPIO.setup(enM, GPIO.OUT)
+GPIO.setup(enE, GPIO.OUT)
+GPIO.setup(ain1Pin, GPIO.OUT)
+GPIO.setup(ain2Pin, GPIO.OUT)
+GPIO.setup(ain3Pin, GPIO.OUT)
+GPIO.setup(ain4Pin, GPIO.OUT)
+
 GPIO.output(enM, GPIO.HIGH)
 GPIO.output(enE, GPIO.HIGH)
 
