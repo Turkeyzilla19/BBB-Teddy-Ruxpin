@@ -10,7 +10,7 @@ import Adafruit_BBIO.GPIO as GPIO
 words = raw_input("what words do you want? ")
 
 subprocess.call(["espeak", "-w", "speech.wav", words, "-s", "130"])
-audio.play("speech.wav")
+
 
 enM = "P8_7"
 enE = "P8_9"
@@ -23,8 +23,8 @@ GPIO.setup(enM, GPIO.OUT)
 GPIO.setup(enE, GPIO.OUT)
 GPIO.setup(MOUTH_OPEN, GPIO.OUT)
 GPIO.setup(MOUTH_CLOSE, GPIO.OUT)
-GPIO.setup(ain3Pin, GPIO.OUT)
-GPIO.setup(ain4Pin, GPIO.OUT)
+GPIO.setup(EYES_OPEN, GPIO.OUT)
+GPIO.setup(EYES_CLOSE, GPIO.OUT)
 
 GPIO.output(enM, GPIO.HIGH)
 GPIO.output(enE, GPIO.HIGH)
@@ -74,5 +74,6 @@ mouthThread.start()
 eyesThread = Thread(target=updateEyes)
 eyesThread.start()     
 audio = AudioPlayer()
+audio.play("speech.wav")
 
         
