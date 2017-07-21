@@ -4,8 +4,7 @@ import subprocess
 import os
 from random import randint
 from threading import Thread
-from chippyRuxpin_audioPlayer import AudioPlayer
-from chippyRuxpin_webFramework import WebFramework
+from Audio import AudioPlayer
 import Adafruit_BBIO.GPIO as GPIO
 
 words = raw_input("what words do you want? ")
