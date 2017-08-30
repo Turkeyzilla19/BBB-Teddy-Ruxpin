@@ -5,12 +5,8 @@ import os
 from random import randint
 from threading import Thread
 from Audio import AudioPlayer
+from Talking import talk
 import Adafruit_BBIO.GPIO as GPIO
-
-words = raw_input("what words do you want? ")
-
-subprocess.call(["espeak", "-w", "speech.wav", words, "-s", "130"])
-
 
 enM = "P8_7"
 enE = "P8_9"
@@ -68,6 +64,14 @@ def updateEyes():
         GPIO.output( EYES_CLOSE, GPIO.LOW)
         GPIO.output( EYES_OPEN, GPIO.HIGH)
         time.sleep(randint( 0,7))
+        
+def talk(myText):    
+    os.system( "espeak \",...\" 2>/dev/null" ) # Sometimes the beginning of audio can get cut off. Insert silence.
+    time.sleep( 0.5 )
+    subprocess.call(["espeak", "-w", "speech.wav", myText, "-s", "130"])
+    audio.play("speech.wav")
+    return myText
+
 
 mouthThread = Thread(target=updateMouth)
 mouthThread.start()
