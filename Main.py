@@ -65,7 +65,7 @@ def updateEyes():
         GPIO.output( EYES_OPEN, GPIO.HIGH)
         time.sleep(randint( 0,7))
         
-def talk(myText):    
+def speak(myText):    
     os.system( "espeak \",...\" 2>/dev/null" ) # Sometimes the beginning of audio can get cut off. Insert silence.
     time.sleep( 0.5 )
     subprocess.call(["espeak", "-w", "speech.wav", myText, "-s", "130"])
@@ -79,5 +79,7 @@ eyesThread = Thread(target=updateEyes)
 eyesThread.start()     
 audio = AudioPlayer()
 audio.play("speech.wav")
+
+talk = talk(speak)
 
         
