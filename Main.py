@@ -78,7 +78,6 @@ mouthThread.start()
 eyesThread = Thread(target=updateEyes)
 eyesThread.start()     
 audio = AudioPlayer()
-audio.play("speech.wav")
 
 talk = talk(speak)
 
